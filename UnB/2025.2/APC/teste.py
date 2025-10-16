@@ -10,3 +10,4 @@ if (qt_desiguais == 0 and len(palavra) % 2 != 0) or (qt_desiguais == 1):
     estado = 'ON'
 
 print(estado)
+
