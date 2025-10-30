@@ -1,5 +1,5 @@
 def paron(lista):
-    vogais = ['aeiou']
+    vogais = 'aeiou'
     
     for palavra in lista: 
         qt_vogais = 0
@@ -12,3 +12,5 @@ def paron(lista):
     
     return lista
     #comece aqui
+
+print(paron(['palavra', 'escrever', 'detesta', 'lista', 'todas']))
