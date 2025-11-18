@@ -1,4 +1,4 @@
-entrada = 'Há diversos tipos de crônicas que exploram outros gêneros textuais'
+entrada = input()
 
 teste = {
     'd': 0,
