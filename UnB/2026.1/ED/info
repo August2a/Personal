@@ -1,0 +1,27 @@
+gcc -E programa.c -o programa.i          # pré-processar
+gcc -S programa.c -O0 -o programa.s      # ver assembly
+gcc -c programa.c -o programa.o          # compilar para objeto
+gcc programa.o -o programa               # linkar
+./programa                               # executar
+
+
+gcc -g -O0 programa.c -o programa
+objdump -d -S programa
+```
+
+- `-g` inclui informação de debug (necessário para intercalar o C)
+- `-S` no objdump intercala o código C original com os opcodes
+
+A saída fica assim:
+```
+int main() {
+    printf("hello\n");
+  401136:  48 8d 05 c7 0e 00 00    lea    rax, [rip+0xec7]
+  40113d:  48 89 c7                mov    rdi, rax
+  401140:  e8 eb fe ff ff          call   401030 <puts@plt>
+
+
+
+
+gcc -O0 -S -fverbose-asm programa.c -o programa.s
+O -fverbose-asm adiciona comentários explicando de onde veio cada instrução, mas não mostra os opcodes hex. Para ver os opcodes no .s você precisa do objdump.
